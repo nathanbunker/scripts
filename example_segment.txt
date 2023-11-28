@@ -1,0 +1,72 @@
+
+
+I need a Python script that will take information in an XML configuration in a file and convert it to mapping of segment name to segment description. 
+
+Here is the XML configuration:
+
+	  <Messages>
+		    <Message
+               Identifier="Z22"
+               Name="Unsolicited Immunization Update"
+               Type="VXU">
+			      <Segment Ref="MSH_IZ 1_5_Z22" Usage="R"/>
+			      <Segment Ref="SFT_219" Usage="O"/>
+			      <Segment Ref="PID_IZ 1_5" Usage="R"/>
+			      <Segment Ref="PD1_IZ 1_5" Usage="RE"/>
+			      <Segment Ref="NK1_IZ 1_5" Usage="RE"/>
+			      <Group ID="VXU_V04.PATIENT" Name="VXU_V04.PATIENT" Usage="O">
+				        <Segment Ref="PV1_251" Usage="R"/>
+				        <Segment Ref="PV2_49" Usage="O"/>
+			      </Group>
+			      <Segment Ref="GT1_154" Usage="O"/>
+			      <Group ID="VXU_V04.INSURANCE" Name="VXU_V04.INSURANCE" Usage="O">
+				        <Segment Ref="IN1_IZ 1_5" Usage="R"/>
+				        <Segment Ref="IN2_218" Usage="O"/>
+				        <Segment Ref="IN3_179" Usage="O"/>
+			      </Group>
+			      <Group ID="VXU_V04.ORDER" Name="VXU_V04.ORDER" Usage="RE">
+				        <Segment Ref="ORC_IZ 1_5" Usage="R"/>
+				        <Group ID="VXU_V04.ORDER.TIMING" Name="VXU_V04.ORDER.TIMING" Usage="O">
+					          <Segment Ref="TQ1_118" Usage="R"/>
+					          <Segment Ref="TQ2_47" Usage="O"/>
+				        </Group>
+				        <Segment Ref="RXA_IZ 1_5_Z22" Usage="R"/>
+				        <Segment Ref="RXR_IZ 1_5" Usage="RE"/>
+				        <Group ID="VXU_V04.ORDER.OBSERVATION" Name="VXU_V04.ORDER.OBSERVATION"
+                   Usage="RE">
+					          <Segment Ref="OBX_IZ 1_5" Usage="R"/>
+					          <Segment Ref="NTE_IZ 1_5" Usage="O"/>
+				        </Group>
+			      </Group>
+		    </Message>
+	  </Messages>
+
+I need to generate these mappings:
+
+'MSH' => 'The MSH segment is required (R) for the Unsolicited Immunization Update (VXU) Z22 message.'
+'SFT' => 'The SFT segment is optional (O) for the Unsolicited Immunization Update (VXU) Z22 message.'
+'PID' => 'The PID segment is required (R) for the Unsolicited Immunization Update (VXU) Z22 message.'
+'PD1' => 'The PD1 segment is required, when information is available (RE) for the Unsolicited Immunization Update (VXU) Z22 message.'
+'NK1' => 'The NK1 segment is required, when information is available (RE) for the Unsolicited Immunization Update (VXU) Z22 message.'
+'PV1' => 'The PV1 segment is required (R) within the optional (O) PATIENT segment group for the Unsolicited Immunization Update (VXU) Z22 message.'
+'PV2' => 'The PV2 segment is optional (O) within the optional (O) PATIENT segment group for the Unsolicited Immunization Update (VXU) Z22 message.'
+'GT1' => 'The GT1 segment is optional (O) for the Unsolicited Immunization Update (VXU) Z22 message.'
+'IN1' => 'The IN1 segment is required (R) within the optional (O) INSURANCE segment group for the Unsolicited Immunization Update (VXU) Z22 message.'
+'IN2' => 'The IN2 segment is optional (O) within the optional (O) INSURANCE segment group for the Unsolicited Immunization Update (VXU) Z22 message.'
+'IN3' => 'The IN3 segment is optional (O) within the optional (O) INSURANCE segment group for the Unsolicited Immunization Update (VXU) Z22 message.'
+'ORC' => 'The ORC segment is required (R) within the required, when information is available (R) ORDER segment group for the Unsolicited Immunization Update (VXU) Z22 message.'
+'TQ1' => 'The TQ1 segment is required (R) within the optional (O) TIMING segment group which is within the required, when information is available (RE) ORDER segment group for the Unsolicited Immunization Update (VXU) Z22 message.'
+'TQ2' => 'The TQ2 segment is optional (O) within the optional (O) TIMING segment group which is within the required, when information is available (RE) ORDER segment group for the Unsolicited Immunization Update (VXU) Z22 message.'
+'RXA' => 'The RXA segment is required (R) within the required, when information is available (RE) ORDER segment group for the Unsolicited Immunization Update (VXU) Z22 message.'
+'RXR' => 'The RXR segment is required, when information is available (RE) within the required, when information is available (RE) ORDER segment group for the Unsolicited Immunization Update (VXU) Z22 message.'
+'OBX' => 'The OBX segment is required (R) within the required, when information is available (RE) OBSERVATION segment group, which is within the ORDER segment group for the Unsolicited Immunization Update (VXU) Z22 message.'
+'NTE' => 'The NTE segment is optional (O) within the required, when information is available (RE) OBSERVATION segment group, which is within the ORDER segment group for the Unsolicited Immunization Update (VXU) Z22 message.'
+
+You will note that the XML file has usages that are to be understood as such:
+ * R: is required
+ * RE: is required, when information is available
+ * O: is optional
+
+All segments have a three character name. This can be found in the first three characters of the Ref attribute. Segments can be grouped, and these groups are given an internal name referenced in the ID attribute. You will note that the name listed here has a prefix 'VXU_V04' that needs to be discarded. 
+
+The end result shoudl be a mapping of the three-character segment name to a human readable description of the segment and how it fits in the message. 

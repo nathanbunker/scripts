@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	  <Messages>
+		    <Message Description="Z22: Unsolicited Immunization Update" 
+               Identifier="Z22"
+               Name="Unsolicited Immunization Update"
+               Type="VXU">
+			      <Segment Ref="MSH_IZ 1_5_Z22" Usage="R"/>
+			      <Segment Ref="SFT_219" Usage="O"/>
+			      <Segment Ref="PID_IZ 1_5" Usage="R"/>
+			      <Segment Ref="PD1_IZ 1_5" Usage="RE"/>
+			      <Segment Ref="NK1_IZ 1_5" Usage="RE"/>
+			      <Group Name="VXU_V04.PATIENT" Usage="O">
+				        <Segment Ref="PV1_251" Usage="R"/>
+				        <Segment Ref="PV2_49" Usage="O"/>
+			      </Group>
+			      <Segment Ref="GT1_154" Usage="O"/>
+			      <Group Name="VXU_V04.INSURANCE" Usage="O">
+				        <Segment Ref="IN1_IZ 1_5" Usage="R"/>
+				        <Segment Ref="IN2_218" Usage="O"/>
+				        <Segment Ref="IN3_179" Usage="O"/>
+			      </Group>
+			      <Group Name="VXU_V04.ORDER" Usage="RE">
+				        <Segment Ref="ORC_IZ 1_5" Usage="R"/>
+				        <Group Name="VXU_V04.ORDER.TIMING" Usage="O">
+					          <Segment Ref="TQ1_118" Usage="R"/>
+					          <Segment Ref="TQ2_47" Usage="O"/>
+				        </Group>
+				        <Segment Ref="RXA_IZ 1_5_Z22" Usage="R"/>
+				        <Segment Ref="RXR_IZ 1_5" Usage="RE"/>
+				        <Group Name="VXU_V04.ORDER.OBSERVATION"
+                   Usage="RE">
+					          <Segment Ref="OBX_IZ 1_5" Usage="R"/>
+					          <Segment Ref="NTE_IZ 1_5" Usage="O"/>
+				        </Group>
+			      </Group>
+		    </Message>
+	  </Messages>
+</ConformanceProfile>

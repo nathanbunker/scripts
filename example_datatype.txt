@@ -1,0 +1,119 @@
+<Datatypes>
+<Datatype Description="Extended Composite ID Number and Name for Persons" ID="XCN_IZ"
+                Name="XCN">
+			      <Component Datatype="ST" MaxLength="15" MinLength="1" Name="ID Number" Usage="C"/>
+			      <Component Datatype="FN" MaxLength="194" MinLength="1" Name="Family Name" Usage="RE"/>
+			      <Component Datatype="ST" MaxLength="30" MinLength="1" Name="Given Name" Usage="RE"/>
+			      <Component Datatype="ST" MaxLength="30" MinLength="1"
+                    Name="Second and Further Given Names or Initials Thereof"
+                    Usage="RE"/>
+			      <Component Datatype="ST" MaxLength="20" MinLength="1" Name="Suffix (e.g., JR or III)"
+                    Usage="O"/>
+			      <Component Datatype="ST" MaxLength="20" MinLength="1" Name="Prefix (e.g., DR)" Usage="O"/>
+			      <Component Binding="HL70360" BindingStrength="R" Datatype="IS" MaxLength="5" MinLength="1"
+                    Name="Degree (e.g., MD)"
+                    Usage="X"/>
+			      <Component Binding="HL70297" BindingStrength="R" Datatype="IS" MaxLength="4" MinLength="1"
+                    Name="Source Table"
+                    Usage="O"/>
+			      <Component Binding="HL70363_IZ" BindingLocation="1" BindingStrength="R" Datatype="HD_IZ"
+                    MaxLength="227"
+                    MinLength="1"
+                    Name="Assigning Authority"
+                    Usage="C"/>
+			      <Component Binding="HL70200_IZ" BindingStrength="R" Datatype="ID" MaxLength="1"
+                    MinLength="1"
+                    Name="Name Type Code"
+                    Usage="RE"/>
+			      <Component Datatype="ST" MaxLength="1" MinLength="1" Name="Identifier Check Digit"
+                    Usage="O"/>
+			      <Component Binding="HL70061" BindingStrength="R" Datatype="ID" MaxLength="3" MinLength="1"
+                    Name="Check Digit Scheme"
+                    Usage="C"/>
+			      <Component Binding="HL70203_IZ" BindingStrength="R" Datatype="ID" MaxLength="5"
+                    MinLength="1"
+                    Name="Identifier Type Code"
+                    Usage="C"/>
+			      <Component Datatype="HD" MaxLength="227" MinLength="1" Name="Assigning Facility" Usage="O"/>
+			      <Component Binding="HL70465" BindingStrength="R" Datatype="ID" MaxLength="1" MinLength="1"
+                    Name="Name Representation Code"
+                    Usage="O"/>
+			      <Component Binding="HL70448" BindingLocation="1" BindingStrength="R" Datatype="CE"
+                    MaxLength="483"
+                    MinLength="1"
+                    Name="Name Context"
+                    Usage="O"/>
+			      <Component Datatype="DR" MaxLength="53" MinLength="1" Name="Name Validity Range" Usage="X"/>
+			      <Component Binding="HL70444" BindingStrength="R" Datatype="ID" MaxLength="1" MinLength="1"
+                    Name="Name Assembly Order"
+                    Usage="X"/>
+			      <Component Datatype="TS" MaxLength="26" MinLength="1" Name="Effective Date" Usage="O"/>
+			      <Component Datatype="TS" MaxLength="26" MinLength="1" Name="Expiration Date" Usage="O"/>
+			      <Component Datatype="ST" MaxLength="199" MinLength="1" Name="Professional Suffix"
+                    Usage="O"/>
+			      <Component Datatype="CWE" MaxLength="705" MinLength="1" Name="Assigning Jurisdiction"
+                    Usage="O"/>
+			      <Component Datatype="CWE" MaxLength="705" MinLength="1"
+                    Name="Assigning Agency or Department"
+                    Usage="O"/>
+		    </Datatype>
+		    <Datatype Description="Extended Composite ID Number and Name for Persons" ID="XCN"
+                Label="XCN"
+                Name="XCN">
+			      <Component Datatype="ST" MaxLength="15" MinLength="1" Name="ID Number" Usage="C"/>
+			      <Component Datatype="FN" MaxLength="194" MinLength="1" Name="Family Name" Usage="RE"/>
+			      <Component Datatype="ST" MaxLength="30" MinLength="1" Name="Given Name" Usage="RE"/>
+			      <Component Datatype="ST" MaxLength="30" MinLength="1"
+                    Name="Second and Further Given Names or Initials Thereof"
+                    Usage="RE"/>
+			      <Component Datatype="ST" MaxLength="20" MinLength="1" Name="Suffix (e.g., JR or III)"
+                    Usage="O"/>
+			      <Component Datatype="ST" MaxLength="20" MinLength="1" Name="Prefix (e.g., DR)" Usage="O"/>
+			      <Component Binding="HL70360" BindingStrength="R" Datatype="IS" MaxLength="5" MinLength="1"
+                    Name="Degree (e.g., MD)"
+                    Usage="X"/>
+			      <Component Binding="HL70297" BindingStrength="R" Datatype="IS" MaxLength="4" MinLength="1"
+                    Name="Source Table"
+                    Usage="O"/>
+			      <Component Binding="HL70363_IZ" BindingLocation="1" BindingStrength="R" Datatype="HD"
+                    MaxLength="227"
+                    MinLength="1"
+                    Name="Assigning Authority"
+                    Usage="O"/>
+			      <Component Binding="HL70200_IZ" BindingStrength="R" Datatype="ID" MaxLength="1"
+                    MinLength="1"
+                    Name="Name Type Code"
+                    Usage="RE"/>
+			      <Component Datatype="ST" MaxLength="1" MinLength="1" Name="Identifier Check Digit"
+                    Usage="O"/>
+			      <Component Binding="HL70061" BindingStrength="R" Datatype="ID" MaxLength="3" MinLength="1"
+                    Name="Check Digit Scheme"
+                    Usage="O"/>
+			      <Component Binding="HL70203_IZ" BindingStrength="R" Datatype="ID" MaxLength="5"
+                    MinLength="1"
+                    Name="Identifier Type Code"
+                    Usage="O"/>
+			      <Component Datatype="HD" MaxLength="227" MinLength="1" Name="Assigning Facility" Usage="O"/>
+			      <Component Binding="HL70465" BindingStrength="R" Datatype="ID" MaxLength="1" MinLength="1"
+                    Name="Name Representation Code"
+                    Usage="O"/>
+			      <Component Binding="HL70448" BindingLocation="1" BindingStrength="R" Datatype="CE"
+                    MaxLength="483"
+                    MinLength="1"
+                    Name="Name Context"
+                    Usage="O"/>
+			      <Component Datatype="DR" MaxLength="53" MinLength="1" Name="Name Validity Range" Usage="X"/>
+			      <Component Binding="HL70444" BindingStrength="R" Datatype="ID" MaxLength="1" MinLength="1"
+                    Name="Name Assembly Order"
+                    Usage="X"/>
+			      <Component Datatype="TS" MaxLength="26" MinLength="1" Name="Effective Date" Usage="O"/>
+			      <Component Datatype="TS" MaxLength="26" MinLength="1" Name="Expiration Date" Usage="O"/>
+			      <Component Datatype="ST" MaxLength="199" MinLength="1" Name="Professional Suffix"
+                    Usage="O"/>
+			      <Component Datatype="CWE" MaxLength="705" MinLength="1" Name="Assigning Jurisdiction"
+                    Usage="O"/>
+			      <Component Datatype="CWE" MaxLength="705" MinLength="1"
+                    Name="Assigning Agency or Department"
+                    Usage="O"/>
+		    </Datatype>
+        </Datatypes>
